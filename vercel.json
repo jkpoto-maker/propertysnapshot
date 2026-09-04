@@ -1,0 +1,34 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/report/:t/:slug",
+      "destination": "https://jkpoto.app.n8n.cloud/webhook/report?t=:t&p=:slug"
+    },
+    {
+      "source": "/report/:t",
+      "destination": "https://jkpoto.app.n8n.cloud/webhook/report?t=:t&p=property"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/report/(.*)",
+      "headers": [
+        { "key": "x-vercel-enable-rewrite-caching", "value": "0" },
+        { "key": "Cache-Control", "value": "no-store" },
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" },
+        { "key": "Referrer-Policy", "value": "no-referrer" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Property Snapshot</title>
+<meta name="description" content="Property Snapshot compiles publicly held council, land-registry and government records for an Auckland property into one clear report.">
+<style>
+  :root{
+    --navy:#001F49; --cyan:#00AEEF; --navy2:#0F62A8;
+    --surface:#ffffff; --page:#eef0f3; --ink:#0b0b0b; --ink2:#4a5158; --muted:#8a8f95;
+    --grid:#e3e6ea;
+  }
+  *{box-sizing:border-box}
+  html,body{background:var(--page)}
+  body{margin:0;color:var(--ink);font:16px/1.62 system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:720px;margin:0 auto;background:var(--surface);min-height:100vh;box-shadow:0 1px 4px rgba(0,0,0,.1)}
+  .mast{background:var(--navy);color:#fff;padding:34px 40px 30px;position:relative}
+  .mast::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--cyan)}
+  .rtype{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.72}
+  h1{font-size:30px;line-height:1.15;margin:14px 0 6px;letter-spacing:-.02em;font-weight:650}
+  .tag{font-size:15.5px;opacity:.82;margin:0}
+  .pad{padding:30px 40px 40px}
+  @media(max-width:640px){.mast{padding:26px 20px 22px}.pad{padding:24px 20px 32px}}
+  h2{font-size:17px;color:var(--navy);margin:26px 0 8px;font-weight:650}
+  p{margin:10px 0;color:var(--ink2)}
+  .lead{color:var(--ink);font-size:17px}
+  ul{margin:10px 0;padding-left:20px;color:var(--ink2)}
+  li{margin:5px 0}
+  .card{border:1px solid var(--grid);border-left:3px solid var(--cyan);background:#F2F7FB;padding:16px 18px;margin:20px 0}
+  .card b{color:var(--navy)}
+  a{color:var(--navy2);font-weight:600;text-decoration:none}
+  a:hover{text-decoration:underline}
+  footer{border-top:1px solid var(--grid);margin-top:30px;padding-top:18px;font-size:12.5px;color:var(--muted);line-height:1.6}
+  .btn{display:inline-block;background:var(--navy2);color:#fff;text-decoration:none;padding:13px 26px;border-radius:8px;font-weight:650}
+  .btn:hover{background:var(--navy);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="mast">
+    <div class="rtype">Property Snapshot</div>
+    <h1>The facts on your property, before anyone else has them</h1>
+    <p class="tag">See today. Plan tomorrow.</p>
+  </div>
+  <div class="pad">
+    <p class="lead">A Property Snapshot pulls together what the public record holds about an Auckland property &mdash; title and tenure, zoning, natural hazards, ground conditions, services, council valuation and the surrounding suburb &mdash; and sets it out in one report you can actually read.</p>
+
+    <div class="card">
+      <p style="margin:0"><b>Have you been sent a link?</b> Every report has its own private address. Open the link you were given and your report will load &mdash; there is nothing to sign in to and nothing to install.</p>
+    </div>
+
+    <h2>What it is</h2>
+    <p>A summary of publicly held council, land-registry and government information, compiled automatically and presented as a point-in-time snapshot.</p>
+
+    <h2>What it is not</h2>
+    <ul>
+      <li>It is not an appraisal under the Real Estate Agents Act 2008.</li>
+      <li>It is not a registered valuation, and it is not a LIM.</li>
+      <li>It contains no estimate of sale price, and no inspection has taken place.</li>
+    </ul>
+    <p>A written appraisal requires someone to walk through the property and to weigh comparable sales. This is the groundwork that comes before that conversation, not a substitute for it.</p>
+
+    <h2>Want one for your property?</h2>
+    <p>Tell us the address and we will email you the report. There is no charge and no obligation.</p>
+    <p style="margin:18px 0 22px"><a class="btn" href="/whats-my-home-worth">Get a Property Snapshot</a></p>
+    <p>Property Snapshot is provided by Sarah Tiplady and Julie Kelman-Poto of Harcourts JK Realty Group, licensed under the Real Estate Agents Act 2008. You are welcome to ring either of us instead: Sarah on <a href="tel:021585300">021 585 300</a>, Julie on <a href="tel:021770564">021 770 564</a>.</p>
+    <p><a href="https://aucklandrealestateagents.co.nz">aucklandrealestateagents.co.nz</a></p>
+
+    <footer>
+      Compiled from publicly available government and council records. Figures are reproduced as published by the source agency and have not been adjusted. Council valuations are mass-appraisal figures and are not market valuations. Planning rules and hazard mapping change; confirm the current position with Auckland Council before acting on anything in a report.
+    </footer>
+  </div>
+</div>
+</body>
+</html>

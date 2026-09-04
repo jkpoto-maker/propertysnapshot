@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get a Property Snapshot · Property Snapshot</title>
+<meta name="description" content="Ask for a Property Snapshot on your Auckland property. A summary of publicly held council, land-registry and government records, emailed to you as a private link.">
+<link rel="canonical" href="https://propertysnapshot.co.nz/whats-my-home-worth">
+<style>
+  :root{
+    --navy:#001F49; --cyan:#00AEEF; --navy2:#0F62A8;
+    --surface:#ffffff; --page:#eef0f3; --ink:#0b0b0b; --ink2:#4a5158; --muted:#8a8f95;
+    --grid:#e3e6ea; --bad:#9a2222; --good:#0a6b28;
+  }
+  *{box-sizing:border-box}
+  html,body{background:var(--page)}
+  body{margin:0;color:var(--ink);font:16px/1.62 system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+  .sheet{max-width:720px;margin:0 auto;background:var(--surface);min-height:100vh;box-shadow:0 1px 4px rgba(0,0,0,.1)}
+  .mast{background:var(--navy);color:#fff;padding:34px 40px 30px;position:relative}
+  .mast::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--cyan)}
+  .rtype{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.72}
+  h1{font-size:30px;line-height:1.15;margin:14px 0 6px;letter-spacing:-.02em;font-weight:650}
+  .tag{font-size:15.5px;opacity:.82;margin:0}
+  .pad{padding:30px 40px 40px}
+  @media(max-width:640px){.mast{padding:26px 20px 22px}.pad{padding:24px 20px 32px}}
+  h2{font-size:17px;color:var(--navy);margin:26px 0 8px;font-weight:650}
+  p{margin:10px 0;color:var(--ink2)}
+  .lead{color:var(--ink);font-size:17px}
+  ul{margin:10px 0;padding-left:20px;color:var(--ink2)}
+  li{margin:5px 0}
+  a{color:var(--navy2);font-weight:600;text-decoration:none}
+  a:hover{text-decoration:underline}
+  footer{border-top:1px solid var(--grid);margin-top:30px;padding-top:18px;font-size:12.5px;color:var(--muted);line-height:1.6}
+
+  form{margin:24px 0 0}
+  .row{margin:0 0 16px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:560px){.two{grid-template-columns:1fr}}
+  label{display:block;font-size:13.5px;font-weight:650;color:var(--navy);margin:0 0 5px}
+  .opt{font-weight:400;color:var(--muted)}
+  input[type=text],input[type=email],input[type=tel]{
+    width:100%;padding:11px 13px;border:1px solid #ccd2d8;border-radius:7px;
+    font:16px/1.4 inherit;color:var(--ink);background:#fff;
+  }
+  input:focus{outline:none;border-color:var(--navy2);box-shadow:0 0 0 3px rgba(15,98,168,.14)}
+  .hint{font-size:12.5px;color:var(--muted);margin:5px 0 0}
+  .check{display:flex;gap:10px;align-items:flex-start;margin:0 0 14px}
+  .check input{margin:3px 0 0;flex:none;width:17px;height:17px}
+  .check span{font-size:14px;color:var(--ink2);line-height:1.5}
+  .trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  button{
+    background:var(--navy2);color:#fff;border:0;border-radius:8px;
+    padding:14px 26px;font:650 16px inherit;cursor:pointer;
+  }
+  button:hover{background:var(--navy)}
+  button[disabled]{background:#9fb3c6;cursor:default}
+  .note{border-left:3px solid var(--cyan);background:#F2F7FB;padding:14px 16px;margin:20px 0;font-size:15px;color:var(--ink2)}
+  .note.bad{border-left-color:var(--bad);background:#FDF3F3;color:var(--bad)}
+  .note.good{border-left-color:var(--good);background:#F1F8F3;color:var(--good)}
+  .note strong{color:inherit}
+  .spin{display:flex;gap:12px;align-items:center;margin:20px 0;font-size:15px;color:var(--ink2)}
+  .dot{width:15px;height:15px;flex:none;border:2px solid #cfd6dd;border-top-color:var(--navy2);border-radius:50%;animation:sp .8s linear infinite}
+  @keyframes sp{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion: reduce){.dot{animation:none}}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="mast">
+    <div class="rtype">Property Snapshot</div>
+    <h1>The facts on your property, before anyone else has them</h1>
+    <p class="tag">See today. Plan tomorrow.</p>
+  </div>
+  <div class="pad">
+    <p class="lead">Tell us the address and we will compile what the public record holds about it &mdash; title and tenure, zoning, natural hazards, ground conditions, services, council valuation, what is being built nearby and how the suburb is tracking &mdash; and email you a private link to the report.</p>
+
+    <div class="note">
+      <strong>What this is not.</strong> It is not an appraisal under the Real Estate Agents Act 2008, not a registered valuation and not a LIM. It contains no estimate of sale price, and no inspection takes place. It is the groundwork that comes before that conversation, not a substitute for it.
+    </div>
+
+    <h2>Ask for a Property Snapshot</h2>
+
+    <form id="psf" novalidate>
+      <div class="two">
+        <div class="row">
+          <label for="ps-name">Your name</label>
+          <input id="ps-name" name="name" type="text" autocomplete="name" maxlength="120" required>
+        </div>
+        <div class="row">
+          <label for="ps-phone">Phone <span class="opt">&mdash; optional</span></label>
+          <input id="ps-phone" name="phone" type="tel" autocomplete="tel" maxlength="40">
+        </div>
+      </div>
+
+      <div class="row">
+        <label for="ps-email">Email address</label>
+        <input id="ps-email" name="email" type="email" autocomplete="email" maxlength="200" required>
+        <p class="hint">The report is emailed rather than shown on screen, so this needs to be an address you can open.</p>
+      </div>
+
+      <div class="two">
+        <div class="row">
+          <label for="ps-address">Property address</label>
+          <input id="ps-address" name="address" type="text" autocomplete="street-address" maxlength="200" required>
+          <p class="hint">Street number and street, for example 14 Brothers Street.</p>
+        </div>
+        <div class="row">
+          <label for="ps-suburb">Suburb</label>
+          <input id="ps-suburb" name="suburb" type="text" autocomplete="address-level3" maxlength="80">
+          <p class="hint">Auckland street names repeat, so this helps us find the right one.</p>
+        </div>
+      </div>
+
+      <div class="trap" aria-hidden="true">
+        <label for="ps-website">Website</label>
+        <input id="ps-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        <label for="ps-company">Company</label>
+        <input id="ps-company" name="company" type="text" tabindex="-1" autocomplete="off">
+        <label for="ps-hp">Leave this empty</label>
+        <input id="ps-hp" name="hp" type="text" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div class="check">
+        <input id="ps-consent" name="consent" type="checkbox" required>
+        <span><label for="ps-consent" style="display:inline;font-weight:400;color:inherit;margin:0">I agree that Sarah Tiplady and Julie Kelman-Poto of Harcourts may contact me about this property and my report. I can ask them to stop at any time.</label></span>
+      </div>
+
+      <div class="check">
+        <input id="ps-marketing" name="marketing" type="checkbox">
+        <span><label for="ps-marketing" style="display:inline;font-weight:400;color:inherit;margin:0">Please also send me occasional market updates for my suburb. I can unsubscribe at any time.</label></span>
+      </div>
+
+      <button id="ps-go" type="submit">Send me the report</button>
+      <p class="hint" style="margin-top:12px">It takes us up to a minute to pull the council records together. Leave this page open and the link will land in your inbox.</p>
+    </form>
+
+    <div id="ps-out" role="status" aria-live="polite"></div>
+
+    <h2>What you get</h2>
+    <ul>
+      <li>Record of title, legal description, tenure and land area, in the unit the council records it in.</li>
+      <li>Council valuation and rates, with land and improvement value shown separately.</li>
+      <li>Zoning, overlays and what Plan Change 120 proposes for the site.</li>
+      <li>Flood, overland flow, liquefaction and ground conditions, tested against the property boundary rather than a single point.</li>
+      <li>Water, wastewater and stormwater connections.</li>
+      <li>Building consents over $1m issued nearby in the last two years.</li>
+      <li>Council valuations of comparable properties on the street, the suburb's census profile and its current market figures.</li>
+    </ul>
+
+    <h2>Who this is from</h2>
+    <p>Property Snapshot is provided by Sarah Tiplady and Julie Kelman-Poto of Harcourts JK Realty Group, licensed under the Real Estate Agents Act 2008.</p>
+    <p>Sarah Tiplady &middot; <a href="tel:021585300">021 585 300</a><br>
+       Julie Kelman-Poto &middot; <a href="tel:021770564">021 770 564</a></p>
+    <p><a href="https://aucklandrealestateagents.co.nz">aucklandrealestateagents.co.nz</a></p>
+
+    <h2>Your details</h2>
+    <p>We use what you enter here to compile your report, to email you the link, and to talk to you about the property. We do not sell your details or pass them to anyone outside Harcourts JK Realty Group. Market updates are a separate, optional tick box and you can unsubscribe at any time. Ask either of us and we will tell you what we hold about you or delete it.</p>
+
+    <footer>
+      Compiled from publicly available government and council records. Figures are reproduced as published by the source agency and have not been adjusted. Council valuations are mass-appraisal figures and are not market valuations. Planning rules and hazard mapping change; confirm the current position with Auckland Council before acting on anything in a report.
+    </footer>
+  </div>
+</div>
+
+<script>
+(function () {
+  var ENDPOINT = 'https://jkpoto.app.n8n.cloud/webhook/snapshot-lead';
+  var f = document.getElementById('psf');
+  var go = document.getElementById('ps-go');
+  var out = document.getElementById('ps-out');
+  var tick = null;
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+  function show(html) { out.innerHTML = html; }
+  function stopTick() { if (tick) { clearInterval(tick); tick = null; } }
+  function val(id) { return document.getElementById(id).value.trim(); }
+
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var name = val('ps-name');
+    var email = val('ps-email');
+    var address = val('ps-address');
+    var consent = document.getElementById('ps-consent').checked;
+
+    // Checked here as well as on the server, so somebody who mistypes an address gets an
+    // instant answer instead of waiting a minute for the server to tell them the same thing.
+    var missing = [];
+    if (name.length < 2) missing.push('your name');
+    if (!/^[^@\s]+@[^@\s.]+\.[^@\s]{2,}$/.test(email)) missing.push('a valid email address');
+    if (address.length < 3) missing.push('the property address');
+    if (!consent) missing.push('your agreement to be contacted');
+    if (missing.length) {
+      var list = missing[0];
+      for (var i = 1; i < missing.length; i++) {
+        list += (i === missing.length - 1 ? ' and ' : ', ') + missing[i];
+      }
+      show('<div class="note bad">Please add ' + esc(list) + ' so we can send your report.</div>');
+      return;
+    }
+
+    var payload = {
+      name: name,
+      email: email,
+      phone: val('ps-phone'),
+      address: address,
+      suburb: val('ps-suburb'),
+      consent: consent,
+      marketing: document.getElementById('ps-marketing').checked,
+      source: 'propertysnapshot.co.nz',
+      website: val('ps-website'),
+      company: val('ps-company'),
+      hp: val('ps-hp')
+    };
+
+    go.disabled = true;
+    go.textContent = 'Working...';
+
+    var t0 = Date.now();
+    show('<div class="spin"><div class="dot"></div><div><strong>Pulling the council records together for ' + esc(address) + '</strong>'
+       + '<br><span id="ps-t">This usually takes 30 to 60 seconds. Leave this page open.</span></div></div>');
+    tick = setInterval(function () {
+      var el = document.getElementById('ps-t');
+      if (!el) { stopTick(); return; }
+      el.textContent = 'Still working, ' + Math.round((Date.now() - t0) / 1000) + ' seconds. Leave this page open.';
+    }, 1000);
+
+    // The build runs server side and can legitimately take most of a minute. If the request
+    // has not come back by 110 seconds we stop waiting and say so, because the report is still
+    // being built and will still be emailed - the person just should not be left staring at a
+    // spinner wondering whether it worked.
+    var done = false;
+    var giveUp = setTimeout(function () {
+      if (done) return;
+      done = true;
+      stopTick();
+      go.disabled = false;
+      go.textContent = 'Send me the report';
+      show('<div class="note good">Thanks. Your report is taking a little longer than usual to compile. '
+         + 'We will email the link to <strong>' + esc(email) + '</strong> as soon as it is ready. '
+         + 'There is no need to send the form again.</div>');
+    }, 110000);
+
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+      .then(function (r) { return r.text(); })
+      .then(function (text) {
+        if (done) return;
+        done = true;
+        clearTimeout(giveUp);
+        stopTick();
+        go.disabled = false;
+        go.textContent = 'Send me the report';
+
+        var d = null;
+        try { d = JSON.parse(text); } catch (err) { d = null; }
+        if (!d) {
+          show('<div class="note bad">Something went wrong at our end. Please try again in a moment, '
+             + 'or call Sarah on 021 585 300 or Julie on 021 770 564 and we will run it by hand.</div>');
+          return;
+        }
+
+        // The server answers 200 for a refusal as well as a success, so this keys on ok and
+        // reason rather than on the HTTP status.
+        if (d.ok) {
+          show('<div class="note good">' + esc(d.message || 'Thanks, we have your request and will email your report shortly.') + '</div>');
+          f.reset();
+          return;
+        }
+        show('<div class="note bad">' + esc(d.message || 'We could not take that request just now.') + '</div>');
+      })
+      .catch(function () {
+        if (done) return;
+        done = true;
+        clearTimeout(giveUp);
+        stopTick();
+        go.disabled = false;
+        go.textContent = 'Send me the report';
+        show('<div class="note bad">We could not reach our server. Check your connection and try again, '
+           + 'or call Sarah on 021 585 300 or Julie on 021 770 564.</div>');
+      });
+  });
+})();
+</script>
+</body>
+</html>
