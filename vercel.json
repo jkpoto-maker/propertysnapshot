@@ -4,11 +4,11 @@
   "rewrites": [
     {
       "source": "/report/:t/:slug",
-      "destination": "https://jkpoto.app.n8n.cloud/webhook/report?t=:t&p=:slug"
+      "destination": "https://n8n.propertysnapshot.co.nz/webhook/report?t=:t&p=:slug"
     },
     {
       "source": "/report/:t",
-      "destination": "https://jkpoto.app.n8n.cloud/webhook/report?t=:t&p=property"
+      "destination": "https://n8n.propertysnapshot.co.nz/webhook/report?t=:t&p=property"
     }
   ],
   "headers": [
