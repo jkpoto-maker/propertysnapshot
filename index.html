@@ -34,6 +34,12 @@
   footer{border-top:1px solid var(--grid);margin-top:30px;padding-top:18px;font-size:12.5px;color:var(--muted);line-height:1.6}
   .btn{display:inline-block;background:var(--navy2);color:#fff;text-decoration:none;padding:13px 26px;border-radius:8px;font-weight:650}
   .btn:hover{background:var(--navy);text-decoration:none}
+  .cta2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 22px}
+  .pill{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:92px;padding:14px 22px;border-radius:999px;background:var(--navy2);color:#fff;text-decoration:none;box-shadow:0 2px 8px rgba(0,31,73,.18)}
+  .pill:hover{background:var(--navy);text-decoration:none}
+  .pill b{font-size:16px;font-weight:700;color:#fff}
+  .pill span{font-size:12.5px;line-height:1.35;color:#d6e6f5;font-weight:500;margin-top:3px}
+  @media (max-width:560px){.cta2{grid-template-columns:1fr}.pill{min-height:84px}}
 </style>
 </head>
 <body>
@@ -63,8 +69,11 @@
 
     <h2>Want one for your property?</h2>
     <p>Tell us the address and we will email you the report. There is no charge and no obligation.</p>
-    <p style="margin:18px 0 22px"><a class="btn" href="/whats-my-home-worth">Get a Property Snapshot</a> &nbsp; <a class="btn" href="/market-snapshot">Get a Market Snapshot</a></p>
-    <p>The Market Snapshot covers the market around your home: suburb sale prices and trends, how fast homes sell, local rents and what buyers pay each week. Get one, or both.</p>
+    <p>Two free reports: one on your home, and one on the market around it. Get one, or both.</p>
+    <div class="cta2">
+      <a class="pill" href="/market-snapshot"><b>Market Snapshot</b><span>Suburb sale prices and trends, how fast homes sell, local rents and what buyers pay each week</span></a>
+      <a class="pill" href="/whats-my-home-worth"><b>Property Snapshot</b><span>Title details, zoning, natural hazards and what&rsquo;s planned for your street</span></a>
+    </div>
     <p>Property Snapshot is provided by Sarah Tiplady and Julie Kelman-Poto of Harcourts JK Realty Group, licensed under the Real Estate Agents Act 2008. You are welcome to ring either of us instead: Sarah on <a href="tel:021585300">021 585 300</a>, Julie on <a href="tel:021770564">021 770 564</a>.</p>
     <p><a href="https://aucklandrealestateagents.co.nz">aucklandrealestateagents.co.nz</a></p>
 
