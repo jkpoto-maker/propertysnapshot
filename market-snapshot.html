@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en-NZ"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Market Snapshot · Property Snapshot</title>
+<meta name="description" content="See what is happening around your home: suburb sale prices and trends, how fast homes sell, local rents, what buyers pay each week, and what the online estimates are based on. The figures describe the market, not your individual home, but they shape how value is perceived. Seeing them clearly helps you decide what is next.">
+<link rel="canonical" href="https://propertysnapshot.co.nz/market-snapshot">
+<style>
+  html,body{margin:0;background:#eef0f3}
+  .psx-page{max-width:820px;margin:0 auto;background:#fff;min-height:100vh;padding:28px 24px 48px}
+  .psx-top{display:flex;justify-content:space-between;align-items:center;max-width:760px;margin:0 auto 18px;font:600 14px system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  .psx-top a{color:#001F49;text-decoration:none}
+  .psx-top nav a{margin-left:16px;color:#4a5158}
+  .psx-foot{max-width:760px;margin:30px auto 0;font:13px/1.6 system-ui,sans-serif;color:#8a8f95}
+  .psx-foot a{color:#4a5158}
+  @media (max-width:560px){.psx-page{padding:18px 14px 40px}.psx-top nav{display:none}}
+
+  .psx{--navy:#001F49;--cyan:#00AEEF;--ink:#0b0b0b;--ink2:#4a5158;--muted:#8a8f95;--grid:#e3e6ea;--bad:#9a2222;--good:#0a6b28;
+    max-width:760px;margin:0 auto;color:var(--ink);font:16px/1.62 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  .psx *{box-sizing:border-box}
+  .psx-hero{background:linear-gradient(135deg,#001F49 0%,#0F62A8 100%);color:#fff;border-radius:14px;padding:34px 30px 30px}
+  .psx-eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin:0 0 10px}
+  .psx-hero h1{font-size:32px;line-height:1.18;margin:0 0 10px;color:#fff;font-weight:800}
+  .psx-hero p{margin:0;font-size:17px;color:#dbe7f5}
+  .psx-tag{display:inline-block;margin-top:16px;padding:6px 12px;border-radius:999px;background:rgba(0,174,239,.18);color:#fff;font-weight:700;font-size:13.5px}
+  .psx-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:22px 0 6px}
+  .psx-card{border:1px solid var(--grid);border-radius:12px;padding:16px 16px 14px;background:#fff}
+  .psx-card b{display:block;color:var(--navy);font-size:15px;margin-bottom:4px}
+  .psx-card span{color:var(--ink2);font-size:14px;line-height:1.5}
+  .psx h2{color:var(--navy);font-size:22px;margin:30px 0 12px}
+  .psx-steps{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .psx-steps li{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--grid);border-radius:12px;padding:14px 16px;background:#fff}
+  .psx-n{flex:0 0 38px;height:38px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center}
+  .psx-steps strong{display:block;color:var(--navy)}
+  .psx-steps em{font-style:normal;color:var(--ink2);font-size:14.5px}
+  .psx-form{margin-top:12px;border:2px solid var(--navy);border-radius:14px;padding:22px 22px 18px;background:#fff}
+  .psx-form label{display:block;font-weight:700;font-size:14px;color:var(--navy);margin:12px 0 5px}
+  .psx-form input[type=text],.psx-form input[type=email],.psx-form input[type=tel]{width:100%;padding:11px 12px;border:1px solid #c9ced4;border-radius:8px;font:inherit;font-size:16px}
+  .psx-row{display:grid;grid-template-columns:2fr 1fr;gap:12px}
+  .psx-form .psx-check{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:14px;color:var(--ink2);font-weight:400}
+  .psx-form .psx-check input{margin-top:4px;width:18px;height:18px;flex:0 0 18px}
+  .psx-hide{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+  .psx-go{margin-top:18px;width:100%;padding:14px 18px;border:0;border-radius:10px;background:var(--navy);color:#fff;font:inherit;font-weight:800;font-size:17px;cursor:pointer}
+  .psx-go:disabled{opacity:.6;cursor:wait}
+  .psx-small{font-size:13px;color:var(--muted);margin-top:12px;line-height:1.55}
+  .psx-note{margin-top:14px;padding:12px 14px;border-radius:10px;font-size:14.5px}
+  .psx-note.good{background:#e8f5ee;color:var(--good)}
+  .psx-note.bad{background:#fbeaea;color:var(--bad)}
+  .psx-spin{display:flex;gap:12px;align-items:flex-start;margin-top:14px;padding:12px 14px;border-radius:10px;background:#eef6fc;font-size:14.5px;color:var(--navy)}
+  .psx-dot{flex:0 0 16px;height:16px;margin-top:4px;border-radius:50%;border:3px solid var(--cyan);border-top-color:transparent;animation:psxr 1s linear infinite}
+  @keyframes psxr{to{transform:rotate(360deg)}}
+  .psx-isnt{margin-top:26px;padding:16px 18px;border-left:4px solid var(--cyan);background:#f5f8fb;border-radius:0 10px 10px 0;font-size:14.5px;color:var(--ink2)}
+  @media (max-width:560px){.psx-hero{padding:26px 20px}.psx-hero h1{font-size:26px}.psx-row{grid-template-columns:1fr}.psx-form{padding:18px 16px}}
+
+  .psx-steps a{color:inherit;text-decoration:none;display:flex;gap:14px;align-items:flex-start;width:100%}
+  .psx-steps li.on{border:2px solid var(--cyan);background:#f2fafe}
+  .psx-steps li.on .psx-n{background:var(--cyan)}
+  .psx-steps li:not(.on) .psx-n{background:var(--navy)}
+  .psx-steps .psx-here{display:inline-block;margin-left:8px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan)}
+  .psx-form select{width:100%;padding:11px 12px;border:1px solid #c9ced4;border-radius:8px;font:inherit;font-size:16px;background:#fff}
+  .psx-what{margin:6px 0 0;padding-left:20px;color:var(--ink2)}
+  .psx-what li{margin-bottom:6px}
+  .psx-rel{border:0;margin:16px 0 0;padding:0}
+  .psx-rel legend{font-weight:700;color:var(--navy);margin-bottom:8px;padding:0}
+  .psx-rel label{display:flex;gap:10px;align-items:center;border:1px solid #c9ced4;border-radius:8px;padding:11px 12px;margin-bottom:8px;font-weight:400;cursor:pointer}
+  .psx-rel input{width:18px;height:18px;flex:0 0 18px;margin:0}
+  .psx-rel label:has(input:checked){border-color:var(--cyan);background:#f2fafe}
+
+  .psx-prog{display:flex;gap:6px;list-style:none;margin:0 0 16px;padding:0;font:600 12px system-ui,sans-serif;color:#8a8f95}
+  .psx-prog li{flex:1;padding-top:8px;border-top:4px solid #dfe3e8}
+  .psx-prog li.on{color:#001F49;border-top-color:#00AEEF}
+  .psx-nav{display:flex;gap:10px;align-items:center;margin-top:14px}
+  .psx-back{background:none;border:1px solid #c9ced4;border-radius:8px;padding:12px 18px;font:600 15px system-ui,sans-serif;color:#4a5158;cursor:pointer}
+  .psx-next{margin-top:14px}
+  .psx-nav .psx-next,.psx-nav .psx-go{margin-top:0}
+  .psx-lead3{font:700 17px system-ui,sans-serif;color:#001F49;margin:0 0 10px}
+  .psx-step[hidden]{display:none}
+</style>
+</head><body><div class="psx-page">
+<div class="psx-top"><a href="/">Property Snapshot</a><nav><a href="/whats-my-home-worth">Property Snapshot</a><a href="/market-snapshot">Market Snapshot</a></nav></div>
+<div class="psx">
+  <div class="psx-hero">
+    <p class="psx-eyebrow">Market Snapshot</p>
+    <h1>What the market around your home is doing right now</h1>
+    <p>See what is happening around your home: suburb sale prices and trends, how fast homes sell, local rents, what buyers pay each week, and what the online estimates are based on. The figures describe the market, not your individual home, but they shape how value is perceived. Seeing them clearly helps you decide what is next.</p>
+    <span class="psx-tag">Know the market before you decide.</span>
+  </div>
+
+  <div class="psx-grid">
+    <div class="psx-card"><b>Prices and selling time</b><span>The median sale price in your suburb, how it has moved, and how long homes are taking to sell.</span></div>
+    <div class="psx-card"><b>Nearby development</b><span>Recent building consents around you, street by street, and what is being built.</span></div>
+    <div class="psx-card"><b>Rents and buying costs</b><span>What homes like yours rent for, and the weekly cost of buying at the suburb median.</span></div>
+    <div class="psx-card"><b>Online estimates, explained</b><span>What the online estimates most people see first are based on, and where they fall short.</span></div>
+  </div>
+  <ul class="psx-what"><li>How recent sales compare with council valuations, and the busiest months to sell in your suburb.</li><li>Your Property Snapshot as well, so the facts and the market sit side by side.</li></ul>
+
+  <h2>Three steps, at your pace</h2>
+  <ol class="psx-steps">
+    <li class="on"><span class="psx-n">1</span><div><strong>Market Snapshot<span class="psx-here">You are here</span></strong><em>Free, emailed to you. Prices, how quickly homes sell, rents and the online estimates.</em></div></li>
+    <li><a href="/whats-my-home-worth"><span class="psx-n">2</span><div><strong>Property Snapshot</strong><em>Free, emailed to you. What council and government records hold about your home.</em></div></a></li>
+    <li><a href="https://aucklandrealestateagents.co.nz/appraisal/"><span class="psx-n">3</span><div><strong>Appraisal</strong><em>When you are ready, Sarah or Julie visits and gives you a written appraisal.</em></div></a></li>
+  </ol>
+
+  <h2 id="psx-get">Ask for your Market Snapshot</h2>
+  <form class="psx-form psx-wiz" id="psx-f" novalidate>
+    <ol class="psx-prog" aria-hidden="true"><li class="on" data-p="1">Property</li><li data-p="2">About it</li><li data-p="3">Send it to</li></ol>
+    <div class="psx-step" data-s="1">
+      <div class="psx-row">
+      <div>
+        <label for="psx-address">Which property?</label>
+        <input type="text" id="psx-address" placeholder="Street number and street" autocomplete="street-address" required>
+      </div>
+      <div>
+        <label for="psx-suburb">Suburb</label>
+        <input type="text" id="psx-suburb" autocomplete="address-level2">
+      </div>
+      </div>
+      <button type="button" class="psx-go psx-next" data-to="2">Next</button>
+    </div>
+
+    <div class="psx-step" data-s="2" hidden>
+
+    <fieldset class="psx-rel" id="psx-rel">
+      <legend>This property is</legend>
+      <label><input type="radio" name="psx-rel" value="My home" required> My home</label>
+      <label><input type="radio" name="psx-rel" value="An investment property I own"> An investment property I own</label>
+      <label><input type="radio" name="psx-rel" value="Not my property"> Not my property</label>
+    </fieldset>
+
+      <div class="psx-nav"><button type="button" class="psx-back" data-to="1">Back</button><button type="button" class="psx-go psx-next" data-to="3">Next</button></div>
+    </div>
+
+    <div class="psx-step" data-s="3" hidden>
+
+    <p class="psx-lead3">Where shall we send it?</p>
+
+    <label for="psx-name">Your name</label>
+    <input type="text" id="psx-name" autocomplete="name" required>
+
+    <div class="psx-row">
+      <div>
+        <label for="psx-email">Email address</label>
+        <input type="email" id="psx-email" autocomplete="email" required>
+      </div>
+      <div>
+        <label for="psx-phone">Phone (optional)</label>
+        <input type="tel" id="psx-phone" autocomplete="tel">
+      </div>
+    </div>
+
+    <div class="psx-hide" aria-hidden="true">
+      <label for="psx-hp">Leave this empty</label><input type="text" id="psx-hp" tabindex="-1" autocomplete="off">
+    </div>
+
+    <label class="psx-check"><input type="checkbox" id="psx-consent" required><span>I agree that Sarah Tiplady and Julie Kelman-Poto of Harcourts may contact me about this property and my report. I can ask them to stop at any time.</span></label>
+    <label class="psx-check"><input type="checkbox" id="psx-marketing"><span>Please also send me occasional market updates for my suburb. I can unsubscribe at any time.</span></label>
+
+      <div class="psx-nav"><button type="button" class="psx-back" data-to="2">Back</button><button type="submit" class="psx-go" id="psx-go">Send me my Market Snapshot</button></div>
+    <div id="psx-out" aria-live="polite"></div>
+
+    </div>
+
+    <p class="psx-small">We use your details to compile the report, email you the link and talk with you about your property. They are held by Sarah Tiplady and Julie Kelman-Poto of Harcourts JK Realty Group and are not sold or passed to anyone outside it. Ask either of us and we will tell you what we hold about you or delete it.</p>
+  </form>
+
+  <div class="psx-isnt"><strong>What this is, and what it is not.</strong> A Market Snapshot summarises published sales, rental and building consent figures for your area and the public record for your address. It contains no appraisal of sale price. A written appraisal needs Sarah or Julie to see your home and compare it with recent sales.</div>
+</div>
+<script>
+(function () {
+  var ENDPOINT = 'https://n8n.propertysnapshot.co.nz/webhook/snapshot-lead';
+  var f = document.getElementById('psx-f');
+  var go = document.getElementById('psx-go');
+  var out = document.getElementById('psx-out');
+  var tick = null;
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+  function show(html) { out.innerHTML = html; }
+  function stopTick() { if (tick) { clearInterval(tick); tick = null; } }
+  function val(id) { return document.getElementById(id).value.trim(); }
+
+  // Where the visitor came from, so each lead traces back to its post or email.
+  function sourceTag() {
+    var tag = 'propertysnapshot.co.nz/market-snapshot';
+    // Answers to the page's own questions travel in the source tag, so the team sees them
+    // in the lead email without any change to the server.
+    [].forEach.call(document.querySelectorAll('#psx-f select[data-extra]'), function (el) {
+      tag += ' | ' + el.getAttribute('data-extra') + ': ' + el.value;
+    });
+    var relEl = document.querySelector('#psx-f input[name="psx-rel"]:checked');
+    if (relEl) tag += ' | This property is: ' + relEl.value;
+    try {
+      var q = new URLSearchParams(window.location.search);
+      var parts = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content']
+        .map(function (k) { return q.get(k) ? k.replace('utm_', '') + ':' + q.get(k) : ''; })
+        .filter(Boolean);
+      if (parts.length) tag += ' | ' + parts.join(' ');
+    } catch (e) {}
+    return tag.slice(0, 200);
+  }
+
+  // Three steps: address, then ownership, then contact details (pilot feedback, Oct 2026).
+  function goStep(n, keepMsg) {
+    [].forEach.call(f.querySelectorAll('.psx-step'), function (el) { el.hidden = el.getAttribute('data-s') !== String(n); });
+    [].forEach.call(f.querySelectorAll('.psx-prog li'), function (el) { el.className = (+el.getAttribute('data-p') <= n) ? 'on' : ''; });
+    if (!keepMsg) show('');
+    var first = f.querySelector('.psx-step[data-s="' + n + '"] input, .psx-step[data-s="' + n + '"] select');
+    if (first) try { first.focus({ preventScroll: true }); } catch (e) {}
+  }
+  [].forEach.call(f.querySelectorAll('.psx-next, .psx-back'), function (b) {
+    b.addEventListener('click', function () {
+      var to = +b.getAttribute('data-to');
+      if (b.className.indexOf('psx-next') > -1) {
+        if (to === 2 && val('psx-address').length < 3) { show('<div class="psx-note bad">Please add the property address.</div>'); return; }
+        if (to === 3 && !f.querySelector('input[name="psx-rel"]:checked')) { show('<div class="psx-note bad">Please tell us whether this is your home, an investment you own, or not your property.</div>'); return; }
+      }
+      goStep(to);
+    });
+  });
+  f.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' || e.target.tagName === 'BUTTON') return;
+    var step = e.target.closest('.psx-step'); if (!step || step.getAttribute('data-s') === '3') return;
+    e.preventDefault(); var nb = step.querySelector('.psx-next'); if (nb) nb.click();
+  });
+  // Arriving from a report with the address in the link: fill it in and move to step 2.
+  try {
+    var qp = new URLSearchParams(location.search);
+    if (qp.get('address')) {
+      document.getElementById('psx-address').value = qp.get('address');
+      if (qp.get('suburb')) document.getElementById('psx-suburb').value = qp.get('suburb');
+      goStep(2);
+    }
+  } catch (e) {}
+  // Links from the email land straight on the form.
+  if (/(^|[?&])utm_medium=email/.test(location.search) || location.hash === '#psx-get') {
+    setTimeout(function () { var g = document.getElementById('psx-get'); if (g) g.scrollIntoView(); }, 50);
+  }
+
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var name = val('psx-name');
+    var email = val('psx-email');
+    var address = val('psx-address');
+    var consent = document.getElementById('psx-consent').checked;
+
+    var missing = [];
+    if (name.length < 2) missing.push('your name');
+    if (!/^[^@\s]+@[^@\s.]+\.[^@\s]{2,}$/.test(email)) missing.push('a valid email address');
+    if (address.length < 3) missing.push('the property address');
+    if (!document.querySelector('#psx-f input[name="psx-rel"]:checked')) missing.push('whether this is your home, an investment you own, or not your property');
+    if (!consent) missing.push('your agreement to be contacted');
+    if (missing.length) {
+      var list = missing[0];
+      for (var i = 1; i < missing.length; i++) {
+        list += (i === missing.length - 1 ? ' and ' : ', ') + missing[i];
+      }
+      show('<div class="psx-note bad">Please add ' + esc(list) + ' so we can send your report.</div>');
+      return;
+    }
+
+    var payload = {
+      name: name,
+      email: email,
+      phone: val('psx-phone'),
+      address: address,
+      suburb: val('psx-suburb'),
+      consent: consent,
+      marketing: document.getElementById('psx-marketing').checked,
+      source: sourceTag(),
+      hp: val('psx-hp')
+    };
+
+    go.disabled = true;
+    go.textContent = 'Working...';
+
+    var t0 = Date.now();
+    show('<div class="psx-spin"><div class="psx-dot"></div><div><strong>Pulling the council records together for ' + esc(address) + '</strong>'
+       + '<br><span id="psx-t">This usually takes 30 to 60 seconds. Leave this page open.</span></div></div>');
+    tick = setInterval(function () {
+      var el = document.getElementById('psx-t');
+      if (!el) { stopTick(); return; }
+      el.textContent = 'Still working, ' + Math.round((Date.now() - t0) / 1000) + ' seconds. Leave this page open.';
+    }, 1000);
+
+    var done = false;
+    var giveUp = setTimeout(function () {
+      if (done) return;
+      done = true;
+      stopTick();
+      go.disabled = false;
+      go.textContent = 'Send me my Market Snapshot';
+      show('<div class="psx-note good">Thanks. Your report is taking a little longer than usual to compile. '
+         + 'We will email the link to <strong>' + esc(email) + '</strong> as soon as it is ready. '
+         + 'There is no need to send the form again.</div>');
+    }, 110000);
+
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+      .then(function (r) { return r.text(); })
+      .then(function (text) {
+        if (done) return;
+        done = true;
+        clearTimeout(giveUp);
+        stopTick();
+        go.disabled = false;
+        go.textContent = 'Send me my Market Snapshot';
+
+        var d = null;
+        try { d = JSON.parse(text); } catch (err) { d = null; }
+        if (!d) {
+          show('<div class="psx-note bad">Something went wrong at our end. Please try again in a moment, '
+             + 'or call Sarah on 021 585 300 or Julie on 021 770 564 and we will run it by hand.</div>');
+          return;
+        }
+        // The server answers 200 for a refusal as well as a success, so key on ok, not the HTTP status.
+        if (d.ok) {
+          show('<div class="psx-note good">' + esc('Thanks. Your Market Snapshot is being built now and will be in your inbox within a few minutes.') + '</div>');
+          f.reset();
+          goStep(1, true);
+          return;
+        }
+        show('<div class="psx-note bad">' + esc(d.message || 'We could not take that request just now.') + '</div>');
+      })
+      .catch(function () {
+        if (done) return;
+        done = true;
+        clearTimeout(giveUp);
+        stopTick();
+        go.disabled = false;
+        go.textContent = 'Send me my Market Snapshot';
+        show('<div class="psx-note bad">We could not reach our server. Please check your connection and try again, '
+           + 'or call Sarah on 021 585 300 or Julie on 021 770 564.</div>');
+      });
+  });
+})();
+</script>
+<div class="psx-foot">Property Snapshot is run by Sarah Tiplady (021 585 300) and Julie Kelman-Poto (021 770 564), Harcourts JK Realty Group. <a href="https://aucklandrealestateagents.co.nz/privacy-policy/">Privacy</a> · <a href="https://aucklandrealestateagents.co.nz/terms-of-service/">Terms</a></div>
+</div></body></html>
